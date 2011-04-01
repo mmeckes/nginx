@@ -1,0 +1,9 @@
+[submodule "modules/static-etags"]
+	path = modules/static-etags
+	url = https://github.com/kkung/nginx-static-etags.git
+[submodule "modules/upstream-fair"]
+	path = modules/upstream-fair
+	url = https://github.com/gnosek/nginx-upstream-fair.git
+[submodule "modules/fancyindex"]
+	path = modules/fancyindex
+	url = git://gitorious.org/ngx-fancyindex/ngx-fancyindex.git
