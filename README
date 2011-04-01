@@ -2,3 +2,5 @@
 The Russian documentation is available at http://sysoev.ru/nginx/
 The English documentation is available at http://nginx.net
 
+
+Configure example: ./configure --sbin-path=/usr/sbin/nginx --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --pid-path=/var/run/nginx.pid --lock-path=/var/lock/nginx.lock --user=www-data --group=www-data --with-http_ssl_module --with-http_gzip_static_module --http-log-path=/var/log/nginx/access.log --http-client-body-temp-path=/var/tmp/nginx/client/ --http-proxy-temp-path=/var/tmp/nginx/proxy/ --http-fastcgi-temp-path=/var/tmp/nginx/fcgi/ --with-http_stub_status_module --with-ipv6 --add-module=modules/static-etags --add-module=modules/upstream-fair --add-module=modules/fancyindex
