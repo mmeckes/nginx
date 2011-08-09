@@ -1,4 +1,68 @@
 
+Changes with nginx 1.1.0                                         01 Aug 2011
+
+    *) Feature: cache loader run time decrease.
+
+    *) Feature: "loader_files", "loader_sleep", and "loader_threshold" 
+       options of the "proxy/fastcgi/scgi/uwsgi_cache_path" directives.
+
+    *) Feature: loading time decrease of configuration with large number of 
+       HTTPS sites.
+
+    *) Feature: now nginx supports ECDHE key exchange ciphers.
+       Thanks to Adrian Kotelba.
+
+    *) Feature: the "lingering_close" directive.
+       Thanks to Maxim Dounin.
+
+    *) Bugfix: in closing connection for pipelined requests.
+       Thanks to Maxim Dounin.
+
+    *) Bugfix: nginx did not disable gzipping if client sent "gzip;q=0" in 
+       "Accept-Encoding" request header line.
+
+    *) Bugfix: in timeout in unbuffered proxied mode.
+       Thanks to Maxim Dounin.
+
+    *) Bugfix: memory leaks when a "proxy_pass" directive contains 
+       variables and proxies to an HTTPS backend.
+       Thanks to Maxim Dounin.
+
+    *) Bugfix: in parameter validaiton of a "proxy_pass" directive with 
+       variables.
+       Thanks to Lanshun Zhou.
+
+    *) Bugfix: SSL did not work on QNX.
+       Thanks to Maxim Dounin.
+
+    *) Bugfix: SSL modules could not be built by gcc 4.6 without 
+       --with-debug option.
+
+
+Changes with nginx 1.0.5                                         19 Jul 2011
+
+    *) Change: now default SSL ciphers are "HIGH:!aNULL:!MD5".
+       Thanks to Rob Stradling.
+
+    *) Feature: the "referer_hash_max_size" and "referer_hash_bucket_size" 
+       directives.
+       Thanks to Witold Filipczyk.
+
+    *) Feature: $uid_reset variable.
+
+    *) Bugfix: a segmentation fault might occur in a worker process, if a 
+       caching was used.
+       Thanks to Lanshun Zhou.
+
+    *) Bugfix: worker processes may got caught in an endless loop during 
+       reconfiguration, if a caching was used; the bug had appeared in 
+       0.8.48.
+       Thanks to Maxim Dounin.
+
+    *) Bugfix: "stalled cache updating" alert.
+       Thanks to Maxim Dounin.
+
+
 Changes with nginx 1.0.4                                         01 Jun 2011
 
     *) Change: now regular expressions case sensitivity in the "map" 
@@ -7,7 +71,7 @@ Changes with nginx 1.0.4                                         01 Jun 2011
     *) Feature: now shared zones and caches use POSIX semaphores on Linux. 
        Thanks to Denis F. Latypoff.
 
-    *) Bugfix: "stalled" cache updating" alert.
+    *) Bugfix: "stalled cache updating" alert.
 
     *) Bugfix: nginx could not be built --without-http_auth_basic_module; 
        the bug had appeared in 1.0.3.
@@ -29,9 +93,9 @@ Changes with nginx 1.0.3                                         25 May 2011
        testing IPv4 address mapped to IPv6 address, if access or deny rules 
        were defined only for IPv6; the bug had appeared in 0.8.22.
 
-    *) Bugfix: a cached response may be broken if proxy/fastcgi/scgi/ 
-       uwsgi_cache_bypass and proxy/fastcgi/scgi/uwsgi_no_cache directive 
-       values were different; the bug had appeared in 0.8.46.
+    *) Bugfix: a cached response may be broken if "proxy/fastcgi/scgi/ 
+       uwsgi_cache_bypass" and "proxy/fastcgi/scgi/uwsgi_no_cache" 
+       directive values were different; the bug had appeared in 0.8.46.
 
 
 Changes with nginx 1.0.2                                         10 May 2011
